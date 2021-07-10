@@ -1,13 +1,133 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+#login_form {
+    border-radius: 5px black;
+    padding: 1rem;
+}
+#login_div {
+    padding-top: 6rem;
+}
+
+#login_card {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-radius: 10px solid gray;
+    background-color: rgb(255, 255, 255);
+}
+
+#signup_form {
+    border-radius: 5px black;
+    padding: 1rem;
+}
+#signup_div {
+    padding-top: 6rem;
+}
+
+#signup_card {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-radius: 10px solid gray;
+
+    background-color: rgb(255, 255, 255);
+}
+
+#addbook_form {
+    border-radius: 5px black;
+    padding: 1rem;
+}
+#addbook_div {
+    padding-top: 2rem;
+}
+
+#addbook_card {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-radius: 10px solid gray;
+    background-color: rgb(255, 255, 255);
+}
+#booklist_card {
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem;
+}
+#booklist_card:hover{
+    background-color: aliceblue;
+}
+
+.navbar {
+    background-color: rgb(255, 255, 260);
+    height: 6rem;
+    /* overflow: hidden; */
+    position: fixed;
+    /* display: flex; */
+    justify-content: space-between;
+    z-index: 1;
+    opacity: 0.9;
+}
+.navbar:hover{
+    background-color: aliceblue!important;
+    
+}
+
+.navbar-brand {
+    color: #bc8f8f !important;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 600;
+}
+.nav-link,
+.nav-item {
+    color: #696969 !important;
+    font-style: italic;
+    font-weight: bold;
+}
+.nav-link:hover, .nav-item:hover, .navbar-brand:hover{
+    color: rgb(35, 17, 53)!important;
+}
+
+.login:hover {
+    background-color: rgb(22, 111, 229) !important;
+}
+
+.login {
+    background-color: rgb(67, 134, 221) !important;
+}
+
+.signup:hover {
+    background-color: rgb(54, 164, 32) !important;
+}
+
+.signup {
+    background-color: rgb(98, 187, 80) !important;
+}
+
+.book-btn {
+    background-color: #808080 !important;
+}
+.book-btn:hover{
+    background-color: rgb(35, 17, 53) !important;
+}
+
+#book {
+    color: #696969;
+}
+
+#book_details {
+    width: 40rem;
+    padding: 2rem;
+}
+
+.book-details {
+    padding-top: 2rem;
 }
