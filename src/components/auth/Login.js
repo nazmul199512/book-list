@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -6,6 +6,12 @@ const Login = () => {
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    useEffect(()=>{
+        if(localStorage.getItem('user-info')){
+            history.push("/")
+        }
+    },[])
 
     const login = async (e) => {
         e.preventDefault();
@@ -15,7 +21,6 @@ const Login = () => {
                 password: password,
             })
             .then((res) => {
-                console.warn(res);
 
                 setEmail("");
                 setPassword("");
@@ -25,7 +30,9 @@ const Login = () => {
     };
 
     return (
+       
         <div className="row">
+            
             <div className="col-md-4"></div>
             <div className="col-md-4" id="login_div">
                 <div className="card" id="login_card">

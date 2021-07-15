@@ -25,6 +25,9 @@ code {
     padding-bottom: 1rem;
     border-radius: 10px solid gray;
     background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 17px -12px rgba(59, 39, 39, 0.75);
+    transition: transform 200ms ease-in;
+    display: block;
 }
 
 #signup_form {
@@ -38,9 +41,10 @@ code {
 #signup_card {
     padding-top: 2rem;
     padding-bottom: 1rem;
-    border-radius: 10px solid gray;
-
+    border-radius: 10px solid gray;    
     background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 17px -12px rgba(59, 39, 39, 0.75);
+    transition: transform 200ms ease-in;
 }
 
 #addbook_form {
@@ -56,6 +60,7 @@ code {
     padding-bottom: 1rem;
     border-radius: 10px solid gray;
     background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 17px -10px rgba(114, 93, 93, 0.75);
 }
 #booklist_card {
     background-color: rgb(255, 255, 255);
@@ -121,6 +126,9 @@ code {
 
 #book {
     color: #696969;
+}
+#book:hover{
+    color: rgb(35, 17, 53) !important;
 }
 
 #book_details {

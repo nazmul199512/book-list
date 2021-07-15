@@ -87,9 +87,9 @@ const AddBook = () => {
                     </form>
                     <hr />
                     <div className="">
-                        Don't wanna add a book? Back to{" "}
+                        Don't wanna add a book? Back to {""}
                         <Link to="/" id="book">
-                            <strong>home</strong>{" "}
+                            <strong>home</strong>
                         </Link>
                     </div>
                 </div>

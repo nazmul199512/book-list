@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
 import axios from "axios";
 
-const Nav = () => {
+const Nav = (props) => {
     const user = JSON.parse(localStorage.getItem("user-info"));
     const history = useHistory();
 
-    
+    useEffect(() => {
+        if (!localStorage.getItem("user-info")) {
+            history.push("/login");
+        }
+    }, []);
+
     const logout = async () => {
         localStorage.clear();
-        await axios.post(`http://127.0.0.1:8000/api/logout`)
+
         history.push("/login");
     };
 
@@ -49,37 +54,44 @@ const Nav = () => {
                                     </NavLink>
                                 </li>
                             </ul>
+
+                            <div className="form-inline my-2 my-lg-0">
+                                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                                    <li className="nav-item">
+                                        <NavDropdown
+                                            title={user.data.user.name}
+                                        >
+                                            <NavDropdown.Item>
+                                                Your list
+                                            </NavDropdown.Item>
+
+                                            <NavDropdown.Item onClick={logout}>
+                                                Logout
+                                            </NavDropdown.Item>
+                                        </NavDropdown>
+                                    </li>
+                                </ul>
+                            </div>
                         </>
-                    ) : null}
-
-                    {localStorage.getItem("user-info") ? (
-                        <div className="form-inline my-2 my-lg-0">
+                    ) : (
+                        <>
                             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                                <li className="nav-item">
-                                    <NavDropdown title={user.data.user.name}>
-                                        <NavDropdown.Item>
-                                             Your list
-                                        </NavDropdown.Item>
-                                        
-                                        <NavDropdown.Item onClick={logout}>
-                                            Logout
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
-                                </li>
+                                <li className="nav-item active"></li>
                             </ul>
-                        </div>
-                    ) : null}
 
-                    {localStorage.getItem("user-info") ? null : (
-                        <div className="form-inline my-2 my-lg-0">
-                            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/login">
-                                        Login
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </div>
+                            <div className="form-inline my-2 my-lg-0">
+                                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                                    <li className="nav-item">
+                                        <NavLink
+                                            className="nav-link"
+                                            to="/login"
+                                        >
+                                            Login
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            </div>
+                        </>
                     )}
                 </div>
             </div>
